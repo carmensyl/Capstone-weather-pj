@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E3F2FD;
+}
+
+h1 {
+    background: #5372f0;
+    font-size: 1.75rem;
+    text-align: center;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.location-input {
+    width: 50%;
+}
+.location-input input {
+    height: 3rem;
+    width: 100%;
+    outline: none;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    margin: auto;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+.location-input input:focus {
+    padding: 0 1rem;
+    border: 2px solid #5372F0;
+}
+.location-input .separator {
+    height: 1px;
+    width: 100%;
+    margin: 25px 0;
+    background: #BBBBBB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.location-input .separator::before {
+    content: "or";
+    color: #6C757D;
+    font-size: 1.18rem;
+    padding: 0 1rem;
+    margin-top: -4px;
+    background: #E3F2FD;
+}
+.location-input button {
+    width: 100%;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #5372F0;
+    transition: 0.2s ease;
+}
+.location-input .go-btn:hover {
+    background: #2c52ed;
+}
+.location-input .current-location-btn {
+    background: #6c757d;
+}
+.location-input .current-location-btn:hover {
+    background: #5c636a;
+}
+.return {
+    width: 100%;
+}
+.return .current-weather {
+    color: #fff;
+    background: #5372F0;
+    border-radius: 0.5rem;
+    padding: 1rem 4rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.current-weather h2 {
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+.current-weather h6 {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+.current-weather .icon {
+    text-align: center;
+}
+.current-weather .icon img {
+    max-width: 120px;
+    margin-top: -15px;
+}
+
+
+
