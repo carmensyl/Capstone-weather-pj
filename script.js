@@ -1,16 +1,17 @@
-const cityInput = document.querrySelector(".city-input")
-const goButton = document.querrySelector(".go-btn")
-const locationButton = document.querrySelector(".current-location-btn")
-const currentWeatherDiv = document.querrySelector(".current-weather")
-const forecastWeatherDiv = document.querrySelector(".forecast-weather")
+const cityInput = document.querySelector(".city-input");
+const goButton = document.querySelector(".go-btn");
+const locationButton = document.querySelector(".current-location-btn");
+const currentWeatherDiv = document.querySelector(".current-weather");
+const forecastCardsDiv = document.querySelector(".forecast-cards");
 
-const API_KEY = "";
+const API_KEY = "8e6162145eba6122c871ad9878f29582";
 
 const createWeatherCard = (cityName, weatherItem, index) => {
     if(index === 0) {
+        // current weather
         return `
         <div class="details">
-            <h2>${cityName} ${weatherItem.dt_txt.split(" ")[0]}</h2>
+            <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
             <h2>${(weatherItem.main.temp - 273.15).toFixed(0)}°C</h2>
             <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
             <h6>Humidity: ${weatherItem.main.humidity}%</h6>
@@ -20,6 +21,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
             <h6>${weatherItem.weather[0].description}</h6>
         </div>` ;
     } else {
+        // forecast weather
         return `
         <li class="card">
             <h3>${weatherItem.dt_txt.split(" ")[0]}</h3>
@@ -45,14 +47,14 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
 
         cityInput.value = "";
         currentWeatherDiv.innerHTML = "";
-        weatherCardsDiv.innerHTML = "";
+        forecastCardsDiv.innerHTML = "";
 
         fiveDaysForecast.forEach((weatherItem, index) => {
-            const html = createWeatherCard(cityName, weatherItem, Index);
+            const html = createWeatherCard(cityName, weatherItem, index);
             if (index === 0) {
                 currentWeatherDiv.insertAdjacentHTML("beforeend", html);
             } else {
-                weatherCardsDiv.insertAdjacentHTML("beforeend", html);
+                forecastCardsDiv.insertAdjacentHTML("beforeend", html);
             }
         });
     }).catch(() => {
@@ -82,15 +84,21 @@ const getUserCoordinates = () => {
             const API_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
             fetch(API_URL).then(response => response.json()).then(data => {
                 const { name } = data[0];
-                getWeatherDetails(name, latifude, longitude);
+                getWeatherDetails(name, latitude, longitude);
+            }).catch(() =>{
+                alert("An error occured while fetching the city name!");
             });
         },
         error => {
             if(error.code === error.PERMISSION_DENIED) {
-                alert("Geolocation request denied. Please reset locationpermission to grant access again.");
+                alert("Geolocation request denied. Please reset location permission to grant access again.");
             } else {
-                
+                alert("Geolocation request error. Please reset location permission.");
             }
         }
-    )
+    );
 }
+
+locationButton.addEventListener("click",getUserCoordinates);
+goButton.addEventListener("click", getCityCoordinates);
+cityInput.addEventListener("keyup", e => e.key === "Go" && getCityCoordinates());

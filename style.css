@@ -2,17 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica;
 }
 
 body {
-    background: #E3F2FD;
+    background: #000;
 }
-
 h1 {
-    background: #5372f0;
+    /* background: white; */
     font-size: 1.75rem;
-    text-align: center;
-    padding: 1rem 0;
+    padding: 2rem 2rem 0.8rem 2rem;
     color: #fff;
 }
 
@@ -23,15 +22,15 @@ h1 {
 }
 
 .location-input {
-    width: 50%;
+    width: 30%;
 }
 .location-input input {
-    height: 3rem;
+    height: 2.8rem;
     width: 100%;
-    outline: none;
+    outline: #6c757d;
+    background-color: #000;
     font-size: 1.1rem;
     padding: 0 1rem;
-    margin: auto;
     border-radius: 0.5rem;
     border: 1px solid #ccc;
 }
@@ -103,6 +102,34 @@ h1 {
 .current-weather .icon img {
     max-width: 120px;
     margin-top: -15px;
+}
+.current-weather .icon h6 {
+    margin-top: -10px;
+    font-size: capitalize;
+}
+.forecast-weather h2 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+.forecast-weather .forecast-cards {
+    display: flex;
+    gap: 20px;
+}
+.forecast-cards .card {
+    color: #fff;
+    padding: 18px 16px;
+    list-style: none;
+    width: calc(100% / 5);
+    background: #6c757d;
+    border-radius: 5px;
+}
+.forecast-cards .card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.forecast-cards .card img {
+    max-width: 70px;
+    margin: 5px 0 -12px 0;
 }
 
 
