@@ -26,14 +26,13 @@ h1 {
 .location-input input {
     height: 2.8rem;
     width: 100%;
-    outline: #6c757d;
     background-color: #000;
     font-size: 1.1rem;
     color: #fff;
     padding: 1rem 1rem;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #898989;
 }
 .location-input input:focus {
     border: 2px solid #5372F0;
@@ -49,7 +48,7 @@ h1 {
 }
 .location-input .separator::before {
     content: "or";
-    color: #ccc;
+    color: #6b6b6b;
     font-size: 1.18rem;
     padding: 0 1rem;
     margin-top: -4px;
@@ -64,7 +63,7 @@ h1 {
     color: #fff;
     background: #313131;
     transition: 0.2s ease;
-    border: solid 1px #6c757d;
+    border: solid 1px #898989;
 }
 .location-input .go-btn:hover {
     background: #383838;
