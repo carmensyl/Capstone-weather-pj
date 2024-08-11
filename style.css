@@ -9,7 +9,6 @@ body {
     background: #000;
 }
 h1 {
-    /* background: white; */
     font-size: 1.75rem;
     padding: 2rem 2rem 0.8rem 2rem;
     color: #fff;
@@ -30,71 +29,67 @@ h1 {
     outline: #6c757d;
     background-color: #000;
     font-size: 1.1rem;
-    padding: 0 1rem;
+    color: #fff;
+    padding: 1rem 1rem;
     border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
     border: 1px solid #ccc;
 }
 .location-input input:focus {
-    padding: 0 1rem;
     border: 2px solid #5372F0;
 }
 .location-input .separator {
     height: 1px;
     width: 100%;
-    margin: 25px 0;
-    background: #BBBBBB;
+    margin: 1.5rem 0;
+    background: #6c757d;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .location-input .separator::before {
     content: "or";
-    color: #6C757D;
+    color: #ccc;
     font-size: 1.18rem;
     padding: 0 1rem;
     margin-top: -4px;
-    background: #E3F2FD;
+    background: #000;
 }
 .location-input button {
     width: 100%;
     padding: 0.8rem 0;
     cursor: pointer;
-    outline: none;
-    border: none;
     border-radius: 0.5rem;
     font-size: 1rem;
     color: #fff;
-    background: #5372F0;
+    background: #313131;
     transition: 0.2s ease;
+    border: solid 1px #6c757d;
 }
 .location-input .go-btn:hover {
-    background: #2c52ed;
+    background: #383838;
 }
 .location-input .current-location-btn {
-    background: #6c757d;
+    background: #313131;
 }
 .location-input .current-location-btn:hover {
-    background: #5c636a;
+    background: #383838;
 }
 .return {
     width: 100%;
 }
+.return h2 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
 .return .current-weather {
     color: #fff;
-    background: #5372F0;
+    background: #313131;
     border-radius: 0.5rem;
     padding: 1rem 4rem 1rem 1rem;
     display: flex;
     justify-content: space-between;
-}
-.current-weather h2 {
-    font-weight: 700;
-    font-size: 1.7rem;
-}
-.current-weather h6 {
-    margin-top: 1rem;
-    font-weight: 500;
-    font-size: 1.7rem;
 }
 .current-weather .icon {
     text-align: center;
@@ -103,14 +98,11 @@ h1 {
     max-width: 120px;
     margin-top: -15px;
 }
-.current-weather .icon h6 {
+.current-weather .icon h5 {
     margin-top: -10px;
-    font-size: capitalize;
+    text-transform: capitalize;
 }
-.forecast-weather h2 {
-    margin: 20px 0;
-    font-size: 1.5rem;
-}
+
 .forecast-weather .forecast-cards {
     display: flex;
     gap: 20px;
@@ -119,9 +111,10 @@ h1 {
     color: #fff;
     padding: 18px 16px;
     list-style: none;
-    width: calc(100% / 5);
-    background: #6c757d;
+    width: calc(100% / 4);
+    background: #000;
     border-radius: 5px;
+    margin-top: 1.5rem;
 }
 .forecast-cards .card h3 {
     font-size: 1.3rem;
@@ -132,5 +125,20 @@ h1 {
     margin: 5px 0 -12px 0;
 }
 
-
+@media (max-width: 950px) {
+  h1 {
+    font-size: 1.45rem;
+    padding: 16px 0;
+  }
+  .container {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  .location-input {
+    width: 100%;
+  }
+  .weather-data h2 {
+    font-size: 1.35rem;
+  }
+}
 

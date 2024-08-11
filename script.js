@@ -12,13 +12,13 @@ const createWeatherCard = (cityName, weatherItem, index) => {
         return `
         <div class="details">
             <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
-            <h2>${(weatherItem.main.temp - 273.15).toFixed(0)}°C</h2>
-            <h6>Wind: ${weatherItem.wind.speed} M/S</h6>
-            <h6>Humidity: ${weatherItem.main.humidity}%</h6>
+            <h3>${(weatherItem.main.temp - 273.15).toFixed(0)}°C</h3>
+            <h3>Wind: ${weatherItem.wind.speed} M/S</h3>
+            <h3>Humidity: ${weatherItem.main.humidity}%</h3>
         </div>
         <div class="icon">
             <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
-            <h6>${weatherItem.weather[0].description}</h6>
+            <h5>${weatherItem.weather[0].description}</h5>
         </div>` ;
     } else {
         // forecast weather
@@ -26,9 +26,9 @@ const createWeatherCard = (cityName, weatherItem, index) => {
         <li class="card">
             <h3>${weatherItem.dt_txt.split(" ")[0]}</h3>
             <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
-            <h2>${(weatherItem.main.temp - 273.15).toFixed(0)}°C</h2>
-            <h6>${weatherItem.wind.speed} M/S</h6>
-            <h6>${weatherItem.main.humidity}%</h6>
+            <h4>${(weatherItem.main.temp - 273.15).toFixed(0)}°C</h4>
+            <h4>${weatherItem.wind.speed} M/S</h4>
+            <h4>${weatherItem.main.humidity}%</h4>
         </li>`;
     }
 } 
